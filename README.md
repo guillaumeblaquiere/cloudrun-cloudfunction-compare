@@ -31,3 +31,8 @@ mvn compile jib:build
 #For deploying
 gcloud beta run deploy python3  --image gcr.io/${PROJECT_ID}/java8 --timeout 900 --memory 2G
 ```
+
+# License
+
+This library is licensed under Apache 2.0. Full license text is available in
+[LICENSE](https://github.com/guillaumeblaquiere/cloudrun-cloudfunction-compare/tree/master/LICENSE).
