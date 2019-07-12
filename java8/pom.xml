@@ -67,7 +67,7 @@
                 <version>1.3.0</version>
                 <configuration>
                     <to>
-                        <image>gcr.io/PROJECT_ID/java8</image>
+                        <image>gcr.io/PROJECT_ID/java8-jib</image>
                         <credHelper>gcr</credHelper>
                     </to>
                 </configuration>

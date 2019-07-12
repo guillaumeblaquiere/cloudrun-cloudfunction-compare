@@ -30,7 +30,12 @@ gcloud builds submit
 mvn compile jib:build
 
 #For deploying
-gcloud beta run deploy python3  --image gcr.io/${PROJECT_ID}/java8 --timeout 900 --memory 2G
+#Docker version
+gcloud beta run deploy java8 --image gcr.io/${PROJECT_ID}/java8 \
+    --timeout 900 --memory 2G
+#JIB version
+gcloud beta run deploy java8-jib --image gcr.io/${PROJECT_ID}/java8-jib \
+    --timeout 900 --memory 2G
 ```
 
 ```bash
