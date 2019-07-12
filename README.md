@@ -11,7 +11,8 @@ gcloud functions deploy python3-fibo  --source function --trigger-http \
 #For building container
 gcloud builds submit 
 #For deploying
-gcloud beta run deploy python3  --image gcr.io/${PROJECT_ID}/python3 --timeout 900 --memory 2G
+gcloud beta run deploy python3  --image gcr.io/${PROJECT_ID}/python3 \
+    --timeout 900 --memory 2G
 ```
 
 ```bash
@@ -30,6 +31,40 @@ mvn compile jib:build
 
 #For deploying
 gcloud beta run deploy python3  --image gcr.io/${PROJECT_ID}/java8 --timeout 900 --memory 2G
+```
+
+```bash
+cd nodejs
+#NodeJs 8
+#For Hello World
+gcloud functions deploy nodejs8-hello --runtime nodejs8 --trigger-http \
+    --entry-point helloWorld --source function --memory 2Gb --timeout 540
+#For Fibonacci
+gcloud functions deploy nodejs8-fibo --runtime nodejs8 --trigger-http \
+    --entry-point fibonacci --source function --memory 2Gb --timeout 540
+
+#NodeJs 10
+#For Hello World
+gcloud functions deploy nodejs10-hello --runtime nodejs10 --trigger-http \
+    --entry-point helloWorld --source function --memory 2Gb --timeout 540
+#For Fibonacci
+gcloud functions deploy nodejs10-fibo --runtime nodejs10 --trigger-http \
+    --entry-point fibonacci --source function --memory 2Gb --timeout 540
+
+#For building container with Cloud Build
+#NodeJs8
+gcloud builds submit 
+#NodeJs10
+gcloud builds submit --config cloudbuild10.yaml
+
+#For deploying
+#NodeJs8
+gcloud beta run deploy nodejs8 --image gcr.io/${PROJECT_ID}/nodejs8 \
+    --timeout 900 --memory 2G
+#NodeJs10
+gcloud beta run deploy nodejs10 --image gcr.io/${PROJECT_ID}/nodejs10 \
+    --timeout 900 --memory 2G
+
 ```
 
 # License
