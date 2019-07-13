@@ -50,10 +50,10 @@ gcloud functions deploy nodejs8-fibo --runtime nodejs8 --trigger-http \
 
 #NodeJs 10
 #For Hello World
-gcloud functions deploy nodejs10-hello --runtime nodejs10 --trigger-http \
+gcloud beta functions deploy nodejs10-hello --runtime nodejs10 --trigger-http \
     --entry-point helloWorld --source function --memory 2Gb --timeout 540
 #For Fibonacci
-gcloud functions deploy nodejs10-fibo --runtime nodejs10 --trigger-http \
+gcloud beta functions deploy nodejs10-fibo --runtime nodejs10 --trigger-http \
     --entry-point fibonacci --source function --memory 2Gb --timeout 540
 
 #For building container with Cloud Build
@@ -69,7 +69,38 @@ gcloud beta run deploy nodejs8 --image gcr.io/${PROJECT_ID}/nodejs8 \
 #NodeJs10
 gcloud beta run deploy nodejs10 --image gcr.io/${PROJECT_ID}/nodejs10 \
     --timeout 900 --memory 2G
+```
+```bash
+cd go
+#Go 1.11
+#For Hello World
+gcloud functions deploy go111-hello --runtime go111 --trigger-http \
+    --entry-point HelloWorld --source function --memory 2Gb --timeout 540
+#For Fibonacci
+gcloud functions deploy go111-fibo --runtime go111 --trigger-http \
+    --entry-point Fibonacci --source function --memory 2Gb --timeout 540
 
+#Go 1.12
+#For Hello World
+gcloud alpha functions deploy go112-hello --runtime go112 --trigger-http \
+    --entry-point HelloWorld --source function --memory 2Gb --timeout 540
+#For Fibonacci
+gcloud alpha functions deploy go112-fibo --runtime go112 --trigger-http \
+    --entry-point Fibonacci --source function --memory 2Gb --timeout 540
+
+#For building container with Cloud Build
+#Go 1.11
+gcloud builds submit 
+#Go 1.12
+gcloud builds submit --config cloudbuild112.yaml
+
+#For deploying
+#Go 1.11
+gcloud beta run deploy go111 --image gcr.io/${PROJECT_ID}/go111 \
+    --timeout 900 --memory 2G
+#Go 1.12
+gcloud beta run deploy go112 --image gcr.io/${PROJECT_ID}/go112 \
+    --timeout 900 --memory 2G
 ```
 
 # License
