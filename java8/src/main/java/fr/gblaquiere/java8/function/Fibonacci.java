@@ -20,15 +20,15 @@ public class Fibonacci extends HttpServlet { //extends only usefull for Cloud Ru
             }
         }
         response.setStatus(HttpServletResponse.SC_OK);
-        response.getWriter().println("Fibonacci(" + n + ") = " + Fibo(n));
+        response.getWriter().println("Fibonacci(" + n + ") = " + fibo(n));
     }
 
 
 // Function for nth Fibonacci number
-    private long Fibo(long n) {
+    private long fibo(long n) {
         if (n <= 2)
             return n - 1;
         else
-        return Fibo(n - 1) + Fibo(n - 2);
+        return fibo(n - 1) + fibo(n - 2);
     }
 }

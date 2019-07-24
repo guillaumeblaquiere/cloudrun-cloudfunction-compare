@@ -39,6 +39,29 @@ gcloud beta run deploy java8-jib --image gcr.io/${PROJECT_ID}/java8-jib \
 ```
 
 ```bash
+cd kotlin8
+#For Hello World
+gcloud alpha functions deploy kotlin8-hello --runtime java8 --trigger-http \
+    --entry-point fr.gblaquiere.kotlin8.function.HelloWorld.helloWorld --memory 2Gb --timeout 540
+#For Fibonacci
+gcloud alpha functions deploy kotlin8-fibo --runtime java8 --trigger-http \
+    --entry-point fr.gblaquiere.kotlin8.function.Fibonacci.fibonacci --memory 2Gb --timeout 540
+
+#For building container with Cloud Build
+gcloud builds submit 
+#For building with JIB (change PROJECT_ID in the pom.xml)
+mvn compile jib:build
+
+#For deploying
+#Docker version
+gcloud beta run deploy kotlin8 --image gcr.io/${PROJECT_ID}/kotlin8 \
+    --timeout 900 --memory 2G  --platform managed
+#JIB version
+gcloud beta run deploy kotlin8-jib --image gcr.io/${PROJECT_ID}/kotlin8-jib \
+    --timeout 900 --memory 2G  --platform managed
+```
+
+```bash
 cd nodejs
 #NodeJs 8
 #For Hello World
