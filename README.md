@@ -12,7 +12,7 @@ gcloud functions deploy python3-fibo  --source function --trigger-http \
 gcloud builds submit 
 #For deploying
 gcloud beta run deploy python3  --image gcr.io/${PROJECT_ID}/python3 \
-    --timeout 900 --memory 2G  --platform managed
+    --timeout 900 --memory 2Gi  --platform managed
 ```
 
 ```bash
@@ -32,10 +32,10 @@ mvn compile jib:build
 #For deploying
 #Docker version
 gcloud beta run deploy java8 --image gcr.io/${PROJECT_ID}/java8 \
-    --timeout 900 --memory 2G  --platform managed
+    --timeout 900 --memory 2Gi  --platform managed
 #JIB version
 gcloud beta run deploy java8-jib --image gcr.io/${PROJECT_ID}/java8-jib \
-    --timeout 900 --memory 2G  --platform managed
+    --timeout 900 --memory 2Gi  --platform managed
 ```
 
 ```bash
@@ -55,10 +55,33 @@ mvn compile jib:build
 #For deploying
 #Docker version
 gcloud beta run deploy kotlin8 --image gcr.io/${PROJECT_ID}/kotlin8 \
-    --timeout 900 --memory 2G  --platform managed
+    --timeout 900 --memory 2Gi  --platform managed
 #JIB version
 gcloud beta run deploy kotlin8-jib --image gcr.io/${PROJECT_ID}/kotlin8-jib \
-    --timeout 900 --memory 2G  --platform managed
+    --timeout 900 --memory 2Gi  --platform managed
+```
+
+```bash
+cd groovy8
+#For Hello World
+gcloud alpha functions deploy groovy8-hello --runtime java8 --trigger-http \
+    --entry-point fr.gblaquiere.groovy8.function.HelloWorld.doGet --memory 2Gb --timeout 540
+#For Fibonacci
+gcloud alpha functions deploy groovy8-fibo --runtime java8 --trigger-http \
+    --entry-point fr.gblaquiere.groovy8.function.Fibonacci.doGet --memory 2Gb --timeout 540
+
+#For building container with Cloud Build
+gcloud builds submit 
+#For building with JIB (change PROJECT_ID in the pom.xml)
+mvn compile jib:build
+
+#For deploying
+#Docker version
+gcloud beta run deploy groovy8 --image gcr.io/${PROJECT_ID}/groovy8 \
+    --timeout 900 --memory 2Gi  --platform managed
+#JIB version
+gcloud beta run deploy groovy8-jib --image gcr.io/${PROJECT_ID}/groovy8-jib \
+    --timeout 900 --memory 2Gi  --platform managed
 ```
 
 ```bash
@@ -88,10 +111,10 @@ gcloud builds submit --config cloudbuild10.yaml
 #For deploying
 #NodeJs8
 gcloud beta run deploy nodejs8 --image gcr.io/${PROJECT_ID}/nodejs8 \
-    --timeout 900 --memory 2G  --platform managed
+    --timeout 900 --memory 2Gi  --platform managed
 #NodeJs10
 gcloud beta run deploy nodejs10 --image gcr.io/${PROJECT_ID}/nodejs10 \
-    --timeout 900 --memory 2G  --platform managed
+    --timeout 900 --memory 2Gi  --platform managed
 ```
 ```bash
 cd go
@@ -120,10 +143,10 @@ gcloud builds submit --config cloudbuild112.yaml
 #For deploying
 #Go 1.11
 gcloud beta run deploy go111 --image gcr.io/${PROJECT_ID}/go111 \
-    --timeout 900 --memory 2G  --platform managed
+    --timeout 900 --memory 2Gi  --platform managed
 #Go 1.12
 gcloud beta run deploy go112 --image gcr.io/${PROJECT_ID}/go112 \
-    --timeout 900 --memory 2G --platform managed
+    --timeout 900 --memory 2Gi --platform managed
 ```
 # Observed result
 
