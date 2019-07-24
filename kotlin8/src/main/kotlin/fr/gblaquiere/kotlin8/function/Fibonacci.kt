@@ -4,6 +4,7 @@ import javax.servlet.http.*
 
 class Fibonacci : HttpServlet() {
 
+    // Only for Cloud Run compatibility
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) {
         fibonacci(req,resp)
     }
