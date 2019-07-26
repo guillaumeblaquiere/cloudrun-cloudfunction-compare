@@ -85,6 +85,29 @@ gcloud beta run deploy groovy8-jib --image gcr.io/${PROJECT_ID}/groovy8-jib \
 ```
 
 ```bash
+cd scala8
+#For Hello World
+gcloud alpha functions deploy scala8-hello --runtime java8 --trigger-http \
+    --entry-point fr.gblaquiere.scala8.function.HelloWorld.doGet --memory 2Gb --timeout 540
+#For Fibonacci
+gcloud alpha functions deploy scala8-fibo --runtime java8 --trigger-http \
+    --entry-point fr.gblaquiere.scala8.function.Fibonacci.doGet --memory 2Gb --timeout 540
+
+#For building container with Cloud Build
+gcloud builds submit 
+#For building with JIB (change PROJECT_ID in the pom.xml)
+mvn compile jib:build
+
+#For deploying
+#Docker version
+gcloud beta run deploy scala8 --image gcr.io/${PROJECT_ID}/scala8 \
+    --timeout 900 --memory 2Gi  --platform managed
+#JIB version
+gcloud beta run deploy scala8-jib --image gcr.io/${PROJECT_ID}/scala8-jib \
+    --timeout 900 --memory 2Gi  --platform managed
+```
+
+```bash
 cd nodejs
 #NodeJs 8
 #For Hello World
