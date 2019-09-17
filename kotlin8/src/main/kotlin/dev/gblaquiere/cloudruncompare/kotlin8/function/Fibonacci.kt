@@ -1,4 +1,4 @@
-package fr.gblaquiere.kotlin8.function
+package dev.gblaquiere.cloudruncompare.kotlin8.function
 
 import javax.servlet.http.*
 

@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>fr.gblaquiere</groupId>
-    <artifactId>groovy8</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>dev.gblaquiere</groupId>
+    <artifactId>cloud-run-compare</artifactId>
+    <version>groovy8-1.0</version>
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -61,7 +61,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>fr.gblaquiere.groovy8.ServletApplication</mainClass>
+                            <mainClass>dev.gblaquiere.cloudruncompare.groovy8.ServletApplication</mainClass>
                             <addClasspath>true</addClasspath>
                         </manifest>
                     </archive>
@@ -79,7 +79,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>fr.gblaquiere.groovy8.ServletApplication</mainClass>
+                                    <mainClass>dev.gblaquiere.cloudruncompare.groovy8.ServletApplication</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>

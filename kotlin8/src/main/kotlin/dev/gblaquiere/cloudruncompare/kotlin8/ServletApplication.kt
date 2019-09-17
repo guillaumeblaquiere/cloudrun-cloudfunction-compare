@@ -1,4 +1,4 @@
-package fr.gblaquiere.kotlin8
+package dev.gblaquiere.cloudruncompare.kotlin8
 
 import org.eclipse.jetty.server.Server
 import org.eclipse.jetty.servlet.ServletContextHandler
@@ -7,8 +7,6 @@ import org.eclipse.jetty.servlet.ServletContextHandler.NO_SESSIONS
 
 
 fun main(args: Array<String>) {
-    println("Hello, world!")
-
     val portEnvVar = System.getenv("PORT")
     var port = 8080;
     if (portEnvVar != null && !portEnvVar.equals("")) {
@@ -19,8 +17,8 @@ fun main(args: Array<String>) {
     val server = Server(port)
 
     val servletHandler = ServletContextHandler(NO_SESSIONS);
-    servletHandler.addServlet("fr.gblaquiere.kotlin8.function.HelloWorld", "/")
-    servletHandler.addServlet("fr.gblaquiere.kotlin8.function.Fibonacci", "/fibo")
+    servletHandler.addServlet("dev.gblaquiere.cloudruncompare.kotlin8.function.HelloWorld", "/")
+    servletHandler.addServlet("dev.gblaquiere.cloudruncompare.kotlin8.function.Fibonacci", "/fibo")
     server.setHandler(servletHandler)
 
     try {

@@ -1,6 +1,6 @@
-package fr.gblaquiere.scala8
+package dev.gblaquiere.cloudruncompare.scala8
 
-import fr.gblaquiere.scala8.function.{Fibonacci, HelloWorld}
+import dev.gblaquiere.cloudruncompare.scala8.function.{Fibonacci, HelloWorld}
 import org.eclipse.jetty.server.Server
 import org.eclipse.jetty.servlet.ServletContextHandler
 import org.eclipse.jetty.servlet.ServletContextHandler.NO_SESSIONS

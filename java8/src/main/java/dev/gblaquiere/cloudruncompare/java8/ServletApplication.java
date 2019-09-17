@@ -1,7 +1,7 @@
-package fr.gblaquiere.java8;
+package dev.gblaquiere.cloudruncompare.java8;
 
-import fr.gblaquiere.java8.function.Fibonacci;
-import fr.gblaquiere.java8.function.HelloWorld;
+import dev.gblaquiere.cloudruncompare.java8.function.Fibonacci;
+import dev.gblaquiere.cloudruncompare.java8.function.HelloWorld;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 

@@ -1,4 +1,4 @@
-package fr.gblaquiere.java8.function;
+package dev.gblaquiere.cloudruncompare.java8.function;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

@@ -1,4 +1,4 @@
-package fr.gblaquiere.groovy8.function
+package dev.gblaquiere.cloudruncompare.groovy8.function
 
 
 import javax.servlet.http.HttpServlet

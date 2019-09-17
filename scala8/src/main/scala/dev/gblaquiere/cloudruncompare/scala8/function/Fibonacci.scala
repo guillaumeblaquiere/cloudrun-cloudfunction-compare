@@ -1,4 +1,4 @@
-package fr.gblaquiere.scala8.function
+package dev.gblaquiere.cloudruncompare.scala8.function
 
 import java.io.IOException
 
