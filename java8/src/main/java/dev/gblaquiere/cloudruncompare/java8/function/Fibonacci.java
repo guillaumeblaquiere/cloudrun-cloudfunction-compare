@@ -1,27 +1,29 @@
 package dev.gblaquiere.cloudruncompare.java8.function;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import com.google.cloud.functions.HttpFunction;
+import com.google.cloud.functions.HttpRequest;
+import com.google.cloud.functions.HttpResponse;
+
+import java.io.BufferedWriter;
 import java.io.IOException;
 
-public class Fibonacci extends HttpServlet { //extends only usefull for Cloud Run
-
-    //With function, the name can be different. Not with Cloud Run. Here a GET request
-    public void doGet(HttpServletRequest request,
-                       HttpServletResponse response) throws IOException {
+public class Fibonacci implements HttpFunction {
+    // Simple function to return "Hello World"
+    @Override
+    public void service(HttpRequest request, HttpResponse response)
+            throws IOException {
         long n = 30;
-        String nParam = request.getParameter("n");
-        if (nParam != null && !nParam.equals("")){
+        if (request.getQueryParameters().get("n") != null && request.getQueryParameters().get("n").size() == 1 && !request.getQueryParameters().get("n").get(0).equals("")){
             try{
-                n = Long.parseLong(nParam);
+                n = Long.parseLong(request.getQueryParameters().get("n").get(0));
             } catch (NumberFormatException e){
-                System.out.println("Error in Number format " + nParam + ". Use default value 30");
+                System.out.println("Error in Number format " + request.getQueryParameters().get("n").get(0) + ". Use default value 30");
             }
         }
-        response.setStatus(HttpServletResponse.SC_OK);
-        response.getWriter().println("Fibonacci(" + n + ") = " + fibo(n));
+        BufferedWriter writer = response.getWriter();
+        writer.write("Fibonacci(" + n + ") = " + fibo(n));
     }
+
 
 
 // Function for nth Fibonacci number

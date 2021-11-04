@@ -1,3 +1,4 @@
+/*
 package dev.gblaquiere.cloudruncompare.java8.function;
 
 import javax.servlet.http.HttpServlet;
@@ -14,4 +15,4 @@ public class HelloWorld extends HttpServlet { //extends only usefull for Cloud R
         response.setStatus(HttpServletResponse.SC_OK);
         response.getWriter().println("Hello World!");
     }
-}
+}*/

@@ -3,7 +3,7 @@ exports.helloWorld = (req, res) => {
     res.send('Hello World!');
 };
 
-exports.fibonacci = (req, res) => {
+exports.Fibonacci = (req, res) => {
     let n = req.query.n;
     if (!n) n=30
     res.send('Fibonacci(' + n + ') = ' + Fibo(n));

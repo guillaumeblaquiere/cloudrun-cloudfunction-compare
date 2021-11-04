@@ -2,7 +2,7 @@ def hello_world(request):
     return 'Hello World!'
 
 
-def fibonacci(request):
+def Fibonacci(request):
     """
     n can be passed in query parameter to customize the fibo value. Else use 30
     :param request:

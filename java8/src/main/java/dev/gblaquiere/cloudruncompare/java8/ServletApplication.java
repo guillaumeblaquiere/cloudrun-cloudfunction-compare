@@ -1,3 +1,4 @@
+/*
 package dev.gblaquiere.cloudruncompare.java8;
 
 import dev.gblaquiere.cloudruncompare.java8.function.Fibonacci;
@@ -36,3 +37,4 @@ public class ServletApplication {
     }
 }
 
+*/

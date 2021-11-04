@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/fibo', (req, res) => {
-    functionNode.fibonacci(req,res)
+    functionNode.Fibonacci(req,res)
 });
 
 const port = process.env.PORT || 8080;

@@ -1,0 +1,1 @@
+web: mvn com.google.cloud.functions:function-maven-plugin:0.9.7:run -Drun.functionTarget=dev.gblaquiere.cloudruncompare.java8.function.Fibonacci
