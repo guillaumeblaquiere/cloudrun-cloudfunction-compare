@@ -37,7 +37,7 @@ do
   cd -
   echo "start deploying ${directory} Cloud Run"
 
-  gcloud run deploy --timeout=540 --region=${REGION} --memory=2048Mi --platform=managed --allow-unauthenticated --source=. ${directory}${SUFFIX} > /dev/null 2>&1 &
+  gcloud run deploy --timeout=3600 --region=${REGION} --memory=2048Mi --platform=managed --allow-unauthenticated --source=. ${directory}${SUFFIX} > /dev/null 2>&1 &
   sleep 3
   cd ..
 done
