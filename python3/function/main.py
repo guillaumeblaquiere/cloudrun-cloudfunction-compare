@@ -1,7 +1,3 @@
-def hello_world(request):
-    return 'Hello World!'
-
-
 def Fibonacci(request):
     """
     n can be passed in query parameter to customize the fibo value. Else use 30

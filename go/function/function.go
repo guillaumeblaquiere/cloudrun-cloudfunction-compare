@@ -6,10 +6,6 @@ import (
 	"strconv"
 )
 
-func HelloWorld(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello World!")
-}
-
 func Fibonacci(w http.ResponseWriter, r *http.Request) {
 	var n int64 = 30
 	param := r.URL.Query().Get("n")

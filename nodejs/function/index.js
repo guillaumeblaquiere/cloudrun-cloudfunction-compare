@@ -1,8 +1,3 @@
-
-exports.helloWorld = (req, res) => {
-    res.send('Hello World!');
-};
-
 exports.Fibonacci = (req, res) => {
     let n = req.query.n;
     if (!n) n=30
