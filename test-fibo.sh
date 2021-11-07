@@ -1,8 +1,7 @@
 #!/bin/sh
 
 REGION="us-central1"
-#DIRECTORIES="go java8 nodejs python3"
-DIRECTORIES="java8"
+DIRECTORIES="go java nodejs python3"
 SUFFIX="-test-fibo"
 N=43
 
