@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request
 
-from function.main import hello_world, Fibonacci
+from function.main import Fibonacci
 
 app = Flask(__name__)
 
