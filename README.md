@@ -2,7 +2,7 @@
 
 This project is a performance test comparison on Cloud Run and Cloud Functions of the same fibonacci algorithm (in 
 recursive mode) in 4 different languages (Java, nodeJS, python, Golang). It's the purpose of this 
-[Medium article](https://guillaume-blaquiere.medium.com/serverless-performance-comparison-does-the-language-matter-975daa46398e?source=friends_link&sk=7a589f8b0eca2669133b7c9bc9b06ced)
+[Medium article](https://medium.com/google-cloud/serverless-performance-comparison-does-the-language-matter-c72a7191c799)
 
 # Deployment
 
